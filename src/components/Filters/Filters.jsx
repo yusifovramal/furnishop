@@ -1,34 +1,36 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
   applyFilter,
-  hanleFilters,
+  clearFilters,
+  handleFilters,
 } from "../../features/Products/productsSlice";
 import { useGetProductsQuery } from "../../features/Products/productsApi";
 import { useEffect } from "react";
-import { useFilterItems } from "../../hooks/useFilterItems";
 import { Wrapper } from "./FiltersWrapper";
+import Category from "./Category";
+import Colors from "./Colors";
 
 const Filters = () => {
   const dispatch = useDispatch();
   const { data: products } = useGetProductsQuery();
-  const { filterItems: categories } = useFilterItems(products);
-  const { text, category } = useSelector((store) => store.products);
+  const { text, category, color } = useSelector((store) => store.products);
+
 
   const updateFilters = (e) => {
     let name = e.target.name;
     let value = e.target.value;
-
     if (name === "category") {
       value = e.target.textContent;
     }
-
-    dispatch(hanleFilters({ name, value }));
+    if (name === 'color') {
+      value = e.target.dataset.color
+    }
+    dispatch(handleFilters({ name, value }));
   };
 
-  console.log(text);
   useEffect(() => {
-    dispatch(applyFilter([products, category, text]));
-  }, [products, category, text]);
+    dispatch(applyFilter([products, category, text,color]));
+  }, [products, category, text, color]);
 
   return (
     <Wrapper>
@@ -45,29 +47,22 @@ const Filters = () => {
               className="search-input"
             />
           </div>
-          <div className="form-control">
-            <h5>category</h5>
-            <div>
-              {categories.map((c, index) => {
-                return (
-                  <button
-                    key={index}
-                    onClick={updateFilters}
-                    type="button"
-                    name="category"
-                    className={`${
-                      category === c.toLowerCase() ? "active" : null
-                    }`}
-                  >
-                    {c}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+          <Category
+            name="category"
+            category={category}
+            products={products}
+            updateFilters={updateFilters}
+          />
+          <Colors
+            name="color"
+            color={color}
+            products={products}
+            updateFilters={updateFilters}
+          />
+
         </form>
-        <button type="button" className="clear-btn">
-          clear filters
+        <button onClick={()=>dispatch(clearFilters())} type="button" className="btn clear-btn">
+          Clear filters
         </button>
       </div>
     </Wrapper>

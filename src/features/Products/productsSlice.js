@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = {
-  filteredProducts: [],
+
+const filters = {
   text: "",
   company: "all",
   category: "all",
@@ -10,6 +10,10 @@ const initialState = {
   price: 0,
   shipping: false,
 };
+const initialState = {
+  filteredProducts: [],
+  ...filters,
+};
 
 const productsSlice = createSlice({
   name: "products",
@@ -18,7 +22,7 @@ const productsSlice = createSlice({
     setProducts: (state, { payload }) => {
       state.filteredProducts = payload;
     },
-    hanleFilters: (state, { payload }) => {
+    handleFilters: (state, { payload }) => {
       const { name, value } = payload;
       state[name] = value;
     },
@@ -38,7 +42,7 @@ const productsSlice = createSlice({
       });
     },
     applyFilter: (state, { payload }) => {
-      const [products, category, text] = payload;
+      const [products, category, text, color] = payload;
       let tempProducts = [];
       if (products) {
         tempProducts = [...products];
@@ -53,19 +57,36 @@ const productsSlice = createSlice({
           (product) => product.category === category
         );
       }
-      
-
+      if (color !== "all") {
+        tempProducts = tempProducts.filter((product) =>
+          product.colors.find((c) => c === color)
+        );
+      }
       state.filteredProducts = tempProducts;
+    },
+    clearFilters: (state) => {
+      return {
+        ...state,
+        text: "",
+        company: "all",
+        category: "all",
+        color: "all",
+        min_price: 0,
+        max_price: 0,
+        price: 0,
+        shipping: false,
+      }
     },
   },
 });
 
 export const {
   setProducts,
-  hanleFilters,
+  handleFilters,
   sortPriceLowest,
   sortPriceHighest,
   sortAll,
   applyFilter,
+  clearFilters,
 } = productsSlice.actions;
 export default productsSlice.reducer;

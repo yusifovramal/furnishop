@@ -1,12 +1,12 @@
-export const useFilterItems = (data) => {
-  const filterItems = [
+export const useFilterItems = (data, type) => {
+  let filterItems = [
     "all",
-    ...new Set(
-      data?.map((product) => {
-        const { category } = product;
-        return category;
-      })
-    ),
+    ...new Set(data?.map((product) => product[type])),
   ];
+
+  if (type === "colors") {
+    filterItems = [...new Set(filterItems.flat())];
+  }
+
   return { filterItems };
 };

@@ -2,37 +2,37 @@ import styled from "styled-components";
 
 export const Wrapper = styled.section`
   .form-control {
-    margin-bottom: 1.25rem;
+    margin-top: 16px;
     h5 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 8px;
+      color:var(--secondary)
     }
   }
   .search-input {
     padding: 0.5rem;
-    background: var(--clr-grey-10);
     border-radius: var(--radius);
-    border-color: transparent;
-    color:red;
-    letter-spacing: var(--spacing);
+    border: 1px solid var(--secondary);
+    color:var(--secondary);
+    height:40px;
   }
   .search-input::placeholder {
     text-transform: capitalize;
   }
 
-  button {
+  .filter-button {
     display: block;
-    margin: 0.25em 0;
-    padding: 0.25rem 0;
+    margin: 4px 0;
+    padding: 4px 0;
     text-transform: capitalize;
     background: transparent;
     border: none;
     border-bottom: 1px solid transparent;
-    letter-spacing: var(--spacing);
-    color: var(--clr-grey-5);
     cursor: pointer;
   }
   .active {
-    border-color: var(--clr-grey-5);
+    color:var(--main);
+    font-weight:600;
+    border-color:var(--main)
   }
   .company {
     background: var(--clr-grey-10);
@@ -46,8 +46,8 @@ export const Wrapper = styled.section`
   }
   .color-btn {
     display: inline-block;
-    width: 1rem;
-    height: 1rem;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: #222;
     margin-right: 0.5rem;
@@ -59,21 +59,21 @@ export const Wrapper = styled.section`
     justify-content: center;
     svg {
       font-size: 0.5rem;
-      color: var(--clr-white);
+      color: var(--white);
     }
   }
   .all-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 0.5rem;
+    margin-right: 8px;
     opacity: 0.5;
   }
-  .active {
+  .color-btn.active {
     opacity: 1;
   }
-  .all-btn .active {
-    text-decoration: underline;
+  .all-btn.active {
+    opacity:1
   }
   .price {
     margin-bottom: 0.25rem;
@@ -87,15 +87,14 @@ export const Wrapper = styled.section`
     font-size: 1rem;
   }
   .clear-btn {
-    background: var(--clr-red-dark);
-    color: var(--clr-white);
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--radius);
+    margin-top:24px;
+    background: RGB(255,14,14);
+    color: var(--white);
   }
   @media (min-width: 768px) {
     .content {
       position: sticky;
-      top: 1rem;
+      top: 16px;
     }
   }
 `;

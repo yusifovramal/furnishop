@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Loading, Error, ProductImages, AddToCart, Stars } from "../components";
-import { Link } from "react-router-dom";
 import { useGetSingleProductQuery } from "../features/Products/productsApi";
 import { Wrapper } from "./SingleProductWrapper";
 import { formatPrice } from "../utils/formatPrice";

@@ -29,7 +29,7 @@ export const Wrapper = styled.section`
     align-items: center;
     justify-content: center;
     svg {
-      font-size: 0.75rem;
+      font-size: 14px;
       color: var(--white);
     }
   }
@@ -40,7 +40,9 @@ export const Wrapper = styled.section`
     margin-top: 2rem;
   }
   .btn {
-    margin-top: 1rem;
-    width: 140px;
+    margin-top: 18px;
+  }
+  .amount-btns{
+    width:160px;
   }
 `;

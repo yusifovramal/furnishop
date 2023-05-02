@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
 color:var(--secondary);
   display: grid;
-  width: 140px;
   justify-items: center;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;

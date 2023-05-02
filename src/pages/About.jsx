@@ -37,10 +37,11 @@ const Wrapper = styled.section`
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items:center;
     gap:32px
   }
   .about-img{
-    height: 340px;
+    height: 380px;
     overflow:hidden;
   }
   img {
@@ -51,11 +52,13 @@ const Wrapper = styled.section`
   p {
     line-height:28px;
     margin-top: 2rem;
-    color: var(--white);
+    color: var(--text-gray);
   }
   .title {
     text-align: left;
-    text-transform:uppercase;
+    text-transform:capitalize;
+    color: var(--secondary)
+
   }
   .underline {
     margin-left: 0;

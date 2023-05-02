@@ -1,7 +1,6 @@
-import { lazy } from "react";
 import Product from "./Products/Product";
 import Error from "./Error";
-import Loading from "./Loading";
+import Loading from "./Loading/Loading";
 import Footer from "./Footer/Footer";
 import Navbar from "./Navbar/Navbar";
 import Spinner from "./Spinner";
@@ -20,6 +19,10 @@ import Filters from "./Filters/Filters";
 import GridView from "./LayoutViews/GridView";
 import ListView from "./LayoutViews/ListView";
 import Sort from "./Sort/Sort";
+import CartContent from "./Cart/CartContent/CartContent";
+import CartColumns from "./Cart/CartColumn/CartColumns";
+import CartTotals from "./Cart/CartTotal/CartTotals";
+import CartItem from "./Cart/CartItem/CartItem";
 
 export {
   Navbar,
@@ -40,6 +43,10 @@ export {
   Filters,
   Sort,
   ProductsList,
+  CartColumns,
+  CartContent,
+  CartItem,
+  CartTotals,
   Error,
   Loading,
   Spinner,

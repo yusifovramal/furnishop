@@ -1,11 +1,12 @@
 import { useFilterItems } from "../../hooks/useFilterItems";
+import Loading from "../Loading/Loading";
 
 function Category({ name, products, updateFilters, category }) {
     const { filterItems: categories } = useFilterItems(products, "category");
     return (
         <div className="form-control">
             <h5>Category</h5>
-            <div>
+            {categories.length < 2 ? <Loading small /> : <div>
                 {categories.map((c, index) => {
                     return (
                         <button
@@ -19,7 +20,8 @@ function Category({ name, products, updateFilters, category }) {
                         </button>
                     );
                 })}
-            </div>
+            </div>}
+
         </div>
     );
 }

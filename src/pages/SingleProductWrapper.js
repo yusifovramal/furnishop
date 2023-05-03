@@ -36,6 +36,7 @@ export const Wrapper = styled.main`
     }
   }
   @media (max-width: 940px) {
+    min-height:70vh!important;
     .product-center {
       grid-template-columns: 1fr;
     }

@@ -1,21 +1,27 @@
 import { BsFillGridFill, BsList } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { setGridView, setListView } from "../../features/Utils/utilsSlice";
+import { openMobileFilter, setGridView, setListView } from "../../features/Utils/utilsSlice";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   sortAll,
   sortPriceHighest,
   sortPriceLowest,
 } from "../../features/Products/productsSlice";
 import { Wrapper } from "./SortWrapper";
+import { AiOutlineFilter } from "react-icons/ai";
 
 const Sort = () => {
   const dispatch = useDispatch();
   const { filteredProducts: products } = useSelector((store) => store.products);
-  const { grid_view } = useSelector((store) => store.utils);
-  const [sort, setSort] = useState("all");
+  const { grid_view, mnoile_filter } = useSelector((store) => store.utils);
 
+  const handleFilterModal = useCallback(() => {
+    dispatch(openMobileFilter())
+  }, [mnoile_filter])
+
+
+  const [sort, setSort] = useState("all");
   const handleSort = (e) => {
     setSort(e.target.value);
   };
@@ -47,6 +53,9 @@ const Sort = () => {
         </button>
       </div>
       <p className="p-found">{products.length} products found</p>
+      <button onClick={handleFilterModal} type="button" className="mobile-filter">
+        <AiOutlineFilter />
+      </button>
       <form>
         <div className="custom-select">
           <select name="sort" id="sort" value={sort} onChange={handleSort}>
@@ -57,7 +66,7 @@ const Sort = () => {
         </div>
       </form>
     </Wrapper>
-);
+  );
 };
 
 export default Sort;

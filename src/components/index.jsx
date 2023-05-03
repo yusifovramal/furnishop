@@ -23,6 +23,7 @@ import CartContent from "./Cart/CartContent/CartContent";
 import CartColumns from "./Cart/CartColumn/CartColumns";
 import CartTotals from "./Cart/CartTotal/CartTotals";
 import CartItem from "./Cart/CartItem/CartItem";
+import MobileFilter from "./Filters/MobileFilter/MobileFilter";
 
 export {
   Navbar,
@@ -47,6 +48,7 @@ export {
   CartContent,
   CartItem,
   CartTotals,
+  MobileFilter,
   Error,
   Loading,
   Spinner,

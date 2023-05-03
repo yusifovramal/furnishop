@@ -8,16 +8,17 @@ export const Wrapper = styled.section`
   .products-container {
     display: grid;
     gap: 2rem 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (min-width: 992px) {
+  @media (max-width: 992px) {
     .products-container {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  @media (min-width: 1170px) {
+  @media (max-width: 660px) {
     .products-container {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr
     }
   }
 `

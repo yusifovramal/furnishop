@@ -37,7 +37,7 @@ const Filters = () => {
       <div className="content">
         <form onSubmit={(e) => e.preventDefault()}>
           {/* search input */}
-          <div className="form-control">
+          <div className="form-control search">
             <input
               type="text"
               name="text"
@@ -59,7 +59,6 @@ const Filters = () => {
             products={products}
             updateFilters={updateFilters}
           />
-
         </form>
         <button onClick={()=>dispatch(clearFilters())} type="button" className="btn clear-btn">
           Clear filters

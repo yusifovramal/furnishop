@@ -1,6 +1,6 @@
 import Logo from '../../assets/img/Logo.png'
 import { FaBars } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { links } from '../../utils/constants'
 import CartButtons from './NavButtons'
 import { NavContainer } from './NavbarWrapper'
@@ -29,7 +29,7 @@ const Navbar = () => {
             const { id, text, url } = link
             return (
               <li key={id}>
-                <Link to={url}>{text}</Link>
+                <NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to={url}>{text}</NavLink>
               </li>
             )
           })}

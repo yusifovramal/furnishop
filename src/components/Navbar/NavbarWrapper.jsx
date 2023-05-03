@@ -8,8 +8,9 @@ export const NavContainer = styled("header")`
     align-items:center;
     justify-content:space-between;
   }
- 
-  
+  .active{
+    color: var(--main)!important;
+  }
   .nav-header {
     display: flex;
     align-items: center;

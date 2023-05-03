@@ -1,19 +1,24 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
+  .content {
+    position: sticky;
+    top: 16px;
+  }
+
   .form-control {
     margin-top: 16px;
     h5 {
       margin-bottom: 8px;
-      color:var(--secondary)
+      color: var(--secondary);
     }
   }
   .search-input {
     padding: 0.5rem;
     border-radius: var(--radius);
     border: 1px solid var(--secondary);
-    color:var(--secondary);
-    height:40px;
+    color: var(--secondary);
+    height: 40px;
   }
   .search-input::placeholder {
     text-transform: capitalize;
@@ -30,9 +35,9 @@ export const Wrapper = styled.section`
     cursor: pointer;
   }
   .active {
-    color:var(--main);
-    font-weight:600;
-    border-color:var(--main)
+    color: var(--main);
+    font-weight: 600;
+    border-color: var(--main);
   }
   .company {
     background: var(--clr-grey-10);
@@ -73,7 +78,7 @@ export const Wrapper = styled.section`
     opacity: 1;
   }
   .all-btn.active {
-    opacity:1
+    opacity: 1;
   }
   .price {
     margin-bottom: 0.25rem;
@@ -87,14 +92,18 @@ export const Wrapper = styled.section`
     font-size: 1rem;
   }
   .clear-btn {
-    margin-top:24px;
-    background: RGB(255,14,14);
+    margin-top: 24px;
+    background: RGB(255, 14, 14);
     color: var(--white);
   }
-  @media (min-width: 768px) {
-    .content {
-      position: sticky;
-      top: 16px;
+  @media (max-width: 992px) {
+    form > *:not(.search),
+    .clear-btn {
+      display: none;
     }
+    .search {
+      margin-bottom: 28px;
+    }
+
   }
 `;

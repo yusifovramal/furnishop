@@ -32,13 +32,31 @@ export const Wrapper = styled.section`
 .p-found{
   font-weight:600;
 }
+.mobile-filter{
+  display:none ;
+  background:var(--secondary);
+  border:none;
+  height:34px;
+  width:34px;
+  display:grid;
+  place-content:center;
+  color:var(--white);
+  border-radius:4px;
+}
 
-@media(max-width:660px){
-  .btn-container{
+@media(max-width:992px){
+  padding-bottom:40px;
+  .btn-container,.p-found{
     display:none;
   }
   .p-found{
     font-size:16px;
   }
+  .mobile-filter{
+    display:block 
+  }
+}
+@media(max-width:660px){
+  padding-bottom:28px;
 }
 `;

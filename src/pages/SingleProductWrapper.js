@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.main`
+ .section{
+  min-height:90vh
+ }
   .product-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -36,7 +39,6 @@ export const Wrapper = styled.main`
     }
   }
   @media (max-width: 940px) {
-    min-height:70vh!important;
     .product-center {
       grid-template-columns: 1fr;
     }

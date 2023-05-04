@@ -4,6 +4,7 @@ export const Wrapper = styled.section`
  display:flex;
  justify-content:space-between;
  align-items:center;
+ margin-bottom:24px;
  .btn-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -38,14 +39,11 @@ export const Wrapper = styled.section`
   border:none;
   height:34px;
   width:34px;
-  display:grid;
-  place-content:center;
   color:var(--white);
   border-radius:4px;
 }
 
 @media(max-width:992px){
-  padding-bottom:40px;
   .btn-container,.p-found{
     display:none;
   }
@@ -57,6 +55,5 @@ export const Wrapper = styled.section`
   }
 }
 @media(max-width:660px){
-  padding-bottom:28px;
 }
 `;

@@ -35,13 +35,13 @@ const Wrapper = styled.div`
   @media (max-width: 992px) {
     .products {
       grid-template-columns: 100%;
-      margin: 3rem auto;
+      margin: 1.5rem auto;
     }
   }
   @media (max-width: 660px) {
     min-height: 90vh;
     .products {
-      margin: 2rem auto;
+      margin: 1rem auto;
     }
   }
 `;

@@ -19,7 +19,7 @@ const SingleProductPage = () => {
   }, [isError]);
 
   if (isLoading) {
-    return <Loading />;
+    return <section className="section-90vh"><Loading /></section>;
   }
   
   if (isLoading) {

@@ -91,18 +91,6 @@ input:focus{
   outline: 2px solid var(--secondary);
 }
 
-@media only screen and (max-width: 940px) {
-  .section-title{
-    font-size: 34px;
-  }
-}
-
-/* Styles for screens with a maximum width of 660px */
-@media only screen and (max-width: 660px) {
-  .section-title{
-    font-size: 26px;
-  }
-}
 .custom-select {
   position: relative;
   width: 130px;
@@ -156,4 +144,21 @@ input:focus{
   height: 100%;
   background-color:black;
   z-index: 9999;
+}
+
+.section-90vh{
+  min-height: 90vh;
+}
+
+@media only screen and (max-width: 940px) {
+  .section-title{
+    font-size: 34px;
+  }
+}
+
+/* Styles for screens with a maximum width of 660px */
+@media only screen and (max-width: 660px) {
+  .section-title{
+    font-size: 26px;
+  }
 }

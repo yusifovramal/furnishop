@@ -62,4 +62,7 @@ export const Wrapper = styled.article`
     font-size: 15px;
     cursor: pointer;
   }
+
+    
+  
 `;

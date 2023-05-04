@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const Wrapper = styled.div`
   display: none;
-  @media (min-width: 776px) {
+  @media (min-width: 660px) {
     display: block;
     .content {
       display: grid;

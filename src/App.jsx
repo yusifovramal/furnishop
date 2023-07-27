@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar, Sidebar, Footer, Spinner } from "./components/index";
 import { Suspense, lazy } from "react";
 import AuthWrapper from "./components/AuthWrapper";
-import { useAuth0 } from "@auth0/auth0-react";
 
 const Home = lazy(() => import("./pages/Home"));
 const SingleProduct = lazy(() => import("./pages/SingleProduct"));

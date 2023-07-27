@@ -40,9 +40,6 @@ const MobileFilter = () => {
             updateFilters={updateFilters}
           />
         </form>
-        {/* <button onClick={()=>dispatch(clearFilters())} type="button" className="btn clear-btn">
-          Clear filters
-        </button> */}
       </div>
       <button className="close-modal">
         <AiFillCloseCircle />

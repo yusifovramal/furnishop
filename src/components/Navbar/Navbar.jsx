@@ -6,10 +6,17 @@ import CartButtons from './NavButtons'
 import { NavContainer } from './NavbarWrapper'
 import { openSidebar } from '../../features/Utils/utilsSlice'
 import { useDispatch } from 'react-redux'
+import { useAuth0 } from '@auth0/auth0-react'
+import Spinner from '../Spinner'
+
 const Navbar = () => {
   const dispatch = useDispatch()
   const handleSidebar = () => {
     dispatch(openSidebar())
+  }
+  const { isAuthenticated, isLoading } = useAuth0();
+  if (isLoading && !isAuthenticated) {
+    return <Spinner />
   }
   return (
     <NavContainer>
@@ -33,6 +40,10 @@ const Navbar = () => {
               </li>
             )
           })}
+          {isAuthenticated && <li>
+            <NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to="/checkout">Checkout</NavLink>
+          </li>}
+
         </ul>
         <CartButtons />
       </div>

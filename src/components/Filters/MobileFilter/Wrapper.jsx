@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: none;
+  min-height:100%;
 
   .form-control {
     margin-top: 16px;
@@ -25,7 +26,6 @@ export const Wrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    min-height:100%;
     display: grid;
     place-content: center;
     padding: 0 16px;

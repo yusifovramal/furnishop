@@ -1,8 +1,9 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navbar, Sidebar, Footer,Spinner } from "./components/index";
+import { Navbar, Sidebar, Footer, Spinner } from "./components/index";
 import { Suspense, lazy } from "react";
-
+import AuthWrapper from "./components/AuthWrapper";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Home = lazy(() => import("./pages/Home"));
 const SingleProduct = lazy(() => import("./pages/SingleProduct"));
@@ -14,22 +15,25 @@ const Products = lazy(() => import("./pages/Products"));
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Sidebar />
-      <Suspense fallback={<Spinner/>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="cart" element={<CartPage />} />
-          <Route path="products" element={<Products />} />
-          <Route path="products/:id" element={<SingleProduct />} />
-          <Route path="checkout" element={<Checkout />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </Suspense>
-      <Footer />
-    </Router>
+    <AuthWrapper>
+      <Router>
+        <Navbar />
+        <Sidebar />
+        <Suspense fallback={<Spinner />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="cart" element={<CartPage />} />
+            <Route path="products" element={<Products />} />
+            <Route path="products/:id" element={<SingleProduct />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </Suspense>
+        <Footer />
+      </Router>
+    </AuthWrapper>
+
   );
 }
 export default App;

@@ -10,7 +10,6 @@ export const workoutApi = rootApi.injectEndpoints({
             query: (id) => `/react-store-single-product?id=${id}`,
             providesTags: ["Products"],
         }),
-       
     })
 })
 

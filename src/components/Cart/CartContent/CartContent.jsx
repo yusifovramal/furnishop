@@ -4,6 +4,7 @@ import { CartColumns, CartItem, CartTotals } from "../../index"
 import { useDispatch, useSelector } from 'react-redux'
 import {  clearCart } from '../../../features/Cart/cartSlice'
 import { Wrapper } from './Wrapper'
+import { MobileCart } from '../MobileCart/MobileCart'
 
 const CartContent = () => {
   const dispatch = useDispatch()
@@ -14,6 +15,9 @@ const CartContent = () => {
         <CartColumns />
         {cartItems.map((item) => {
           return <CartItem key={item.id} {...item} />
+        })}
+        {cartItems.map((item) => {
+          return <MobileCart key={item.id} {...item} />
         })}
         <div className='link-container'>
           <Link to='/products' className='btn'>

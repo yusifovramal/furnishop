@@ -62,7 +62,8 @@ export const Wrapper = styled.article`
     font-size: 15px;
     cursor: pointer;
   }
+   @media (max-width:660px){
+     display:none
+   }
 
-    
-  
 `;

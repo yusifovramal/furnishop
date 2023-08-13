@@ -3,13 +3,13 @@ import React from 'react'
 import { Navigate } from 'react-router-dom';
 import Checkout from '../pages/Checkout';
 
-function ProtectedRoute() {
+function ProtectedRoute({ page }) {
     const { isAuthenticated } = useAuth0();
     if (!isAuthenticated) {
         Navigate({ to: "/" })
         return
     }
-    return Checkout
+    return page
 }
 
 export default ProtectedRoute

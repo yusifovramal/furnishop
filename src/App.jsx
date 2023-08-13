@@ -25,7 +25,7 @@ function App() {
             <Route path="cart" element={<CartPage />} />
             <Route path="products" element={<Products />} />
             <Route path="products/:id" element={<SingleProduct />} />
-            <Route path="checkout" element={<ProtectedRoute />} />
+            <Route path="checkout" element={<ProtectedRoute />} page={<Checkout/>} />
             <Route path="*" element={<Error />} />
           </Routes>
         </Suspense>

@@ -24,6 +24,7 @@ import CartColumns from "./Cart/CartColumn/CartColumns";
 import CartTotals from "./Cart/CartTotal/CartTotals";
 import CartItem from "./Cart/CartItem/CartItem";
 import MobileFilter from "./Filters/MobileFilter/MobileFilter";
+import ProtectedRoute from "./ProtectedRoute";
 
 export {
   Navbar,
@@ -52,4 +53,5 @@ export {
   Error,
   Loading,
   Spinner,
+  ProtectedRoute
 };

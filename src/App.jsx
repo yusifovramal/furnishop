@@ -1,6 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navbar, Sidebar, Footer, Spinner } from "./components/index";
+import { Navbar, Sidebar, Footer, Spinner, ProtectedRoute } from "./components/index";
 import { Suspense, lazy } from "react";
 import AuthWrapper from "./components/AuthWrapper";
 
@@ -25,7 +25,7 @@ function App() {
             <Route path="cart" element={<CartPage />} />
             <Route path="products" element={<Products />} />
             <Route path="products/:id" element={<SingleProduct />} />
-            <Route path="checkout" element={<Checkout />} />
+            <Route path="checkout" element={<ProtectedRoute />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </Suspense>
